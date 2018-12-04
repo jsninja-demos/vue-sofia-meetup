@@ -6,7 +6,14 @@
       <div>Sofia Vue.js meetup #1</div>
       <div class="motto">{{ motto }}</div>
     </header>
-    <Carousel @afterChange="nextMotto" @swipe="sendAnalytics('swipe')"/>
+    <Carousel :items="talks" @afterChange="nextMotto" @swipe="sendAnalytics('swipe')">
+      <template slot="item" slot-scope="item">
+        <h3>VueJS in depth: templates, reactivity, magic</h3>
+        <h4>Illya Klymov</h4>
+        <h5>CEO @ JavaScript.Ninja, Kharkiv</h5>
+      </template>
+    </Carousel>
+
     <div>
       💖 {{ love }}
       <button @click="sendLove">I love this!</button>
@@ -16,6 +23,7 @@
 <script>
 import sendEvent from "./helpers/analytics";
 import Carousel from "./components/Carousel";
+import talks from "./data/talks";
 
 const mottos = [
   "(1) VueJS is awesome!",
@@ -33,7 +41,8 @@ export default {
 
   data: () => ({
     love: 0,
-    currentMottoIdx: 0
+    currentMottoIdx: 0,
+    talks
   }),
 
   computed: {
