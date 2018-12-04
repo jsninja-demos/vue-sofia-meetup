@@ -6,7 +6,7 @@
       <div>Sofia Vue.js meetup #1</div>
       <div class="motto">{{ motto }}</div>
     </header>
-    <Carousel/>
+    <Carousel @afterChange="nextMotto" @swipe="sendAnalytics('swipe')"/>
     <div>
       💖 {{ love }}
       <button @click="sendLove">I love this!</button>

@@ -31,6 +31,21 @@ import "slick-carousel";
 export default {
   mounted() {
     $(this.$refs.carousel).slick();
+  },
+
+  watch: {
+    $listeners: {
+      handler(listeners, oldListeners) {
+        this.$nextTick(() => {
+          const $c = $(this.$refs.carousel);
+
+          Object.entries(listeners).forEach(([event, fn]) => {
+            $c.on(event, fn);
+          });
+        });
+      },
+      immediate: true
+    }
   }
 };
 </script>
