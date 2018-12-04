@@ -39,6 +39,10 @@ export default {
         this.$nextTick(() => {
           const $c = $(this.$refs.carousel);
 
+          Object.entries(oldListeners || []).forEach(([event, fn]) => {
+            $c.off(event, fn);
+          });
+
           Object.entries(listeners).forEach(([event, fn]) => {
             $c.on(event, fn);
           });
