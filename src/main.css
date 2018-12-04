@@ -1,0 +1,64 @@
+#app {
+  color: #2c3e50;
+  margin-top: 60px;
+  font-family: "Calibri", sans-serif;
+  text-align: center;
+  font-size: 50px;
+}
+
+#app > section {
+  margin: 0 auto;
+}
+
+button {
+  font-size: 50px;
+  margin: 0 10px;
+}
+
+header {
+  font-size: 80px;
+  color: #00008b;
+}
+header img {
+  display: inline-block;
+  height: 60px;
+  margin: 0 5px;
+}
+
+section {
+  border: solid #000000 1px;
+  text-align: left;
+  padding: 10px;
+  width: 50vw;
+}
+
+section h3 {
+  font-size: 30px;
+}
+
+section h4 {
+  font-size: 20px;
+}
+
+section h5 {
+  font-size: 16px;
+}
+
+.carousel {
+  width: 50vw;
+  margin: 0 auto;
+  border: solid black 3px;
+}
+
+.carousel section {
+  border: none;
+}
+
+.motto {
+  font-size: 40px;
+  color: chocolate;
+}
+
+.info {
+  font-size: 40px;
+}
